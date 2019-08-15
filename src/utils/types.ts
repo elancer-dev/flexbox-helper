@@ -1,11 +1,21 @@
+
+export type TFlexContainer = {
+    display: 'flex' | 'inline-flex';
+    flexDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+    flexWrap: 'nowrap' | 'wrap' | 'wrap-reverse';
+};
+
+export type TFlexItem = {
+    align: string;
+}
+
+export type TStyles = {
+    flexContainer: TFlexContainer;
+    flexItem: TFlexItem;
+};
+
 export type TState = {
-    styles: {
-        flexContainer: {
-            display: string;
-            flexDirection: string;
-            flexWrap: string;
-        };
-    };
+    styles: TStyles;
 }
 
 export type TAction<H extends object, D> = {

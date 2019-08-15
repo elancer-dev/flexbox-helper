@@ -6,7 +6,10 @@ const initialState: TState = {
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'nowrap',
-        }
+        },
+        flexItem: {
+            align: '',
+        },
     }
 }
 

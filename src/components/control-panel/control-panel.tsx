@@ -4,7 +4,6 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { TState, ActionFunction } from './../../utils/types';
 import { action, actionsHandler } from './../../utils/actions';
 import Helper from '../../lib/helper';
-// import RunningLabel from './../running-label/running-label';
 import './control-panel.scss';
 
 import Hint from '../hint/hint';
@@ -15,8 +14,7 @@ type TProps = {
     // initTimerInterval?: number;
 }
 
-interface TPS extends TProps {
-    timerInterval: number;
+interface TPS extends TProps, TState {
     action: ActionFunction;
 }
 
@@ -30,25 +28,10 @@ class ControlPanel extends React.PureComponent<TPS> {
         // }
     }
 
-    // buttonAddClickHandler(inc: number) {
-    //     if (this.props.timerInterval + inc >= 0) {
-    //         this.props.action(actionsHandler, 'addInterval', { add: inc });
-    //     }
-    // }
-
-    // buttonMultClickHandler(mult: number) {
-    //     if (this.props.timerInterval > 0) {
-    //         this.props.action(actionsHandler, 'multInterval', { mult: mult });
-    //     }
-    // }
-
-    // buttonClearClickHandler() {
-    //     if (this.props.timerInterval > 0) {
-    //         this.props.action(actionsHandler, 'clearInterval', {});
-    //     }
-    // }
 
     render() {
+
+        var flexContainerStyle: React.CSSProperties = this.props.styles.flexContainer;
 
         return (
             <div className="flexbox-helper">
@@ -57,6 +40,7 @@ class ControlPanel extends React.PureComponent<TPS> {
                     <div className="flexbox-helper__section-tag">{'.flex-container {'}</div>
 
                     <div className="flexbox-helper__params">
+
                         <ParamName hintMessage="Модель flexbox-разметки связана с определенным значением CSS-свойства display родительского html-элемента, содержащего внутри себя дочерние блоки.">
                             display:
                         </ParamName>
@@ -66,16 +50,17 @@ class ControlPanel extends React.PureComponent<TPS> {
                             paramTag="flexContainer"
                             paramName="display"
                             paramValue="flex"
-                        >
-                            flex
-                        </ParamOption>
+                            paramCurrentValue={this.props.styles.flexContainer.display}
+                        />
 
-                        <Hint message="Генерирует flex-контейнер уровня блока">
-                            <div className="flexbox-helper__param-option flexbox-helper__param-option_current">flex</div>
-                        </Hint>
-                        <Hint message="Генерирует flex-контейнер уровня строки">
-                            <div className="flexbox-helper__param-option">inline-flex</div>
-                        </Hint>
+                        <ParamOption
+                            hintMessage="Генерирует flex-контейнер уровня строки"
+                            paramTag="flexContainer"
+                            paramName="display"
+                            paramValue="inline-flex"
+                            paramCurrentValue={this.props.styles.flexContainer.display}
+                        />
+
                     </div>
 
                     <div className="flexbox-helper__params">
@@ -107,7 +92,7 @@ class ControlPanel extends React.PureComponent<TPS> {
                     </div>
 
                 </div>
-                <div className="flexbox-helper__container">
+                <div className="flexbox-helper__container" style={this.props.styles.flexContainer}>
                     <div className="flexbox-helper__flex-item">1</div>
                     <div className="flexbox-helper__flex-item">2</div>
                     <div className="flexbox-helper__flex-item">3</div>

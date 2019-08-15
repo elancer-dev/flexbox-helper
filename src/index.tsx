@@ -11,6 +11,6 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-ReactDOM.render(<Provider store={store}><ControlPanel initTimerInterval={10} /></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}><ControlPanel /></Provider>, document.getElementById('app'));
 
 // serviceWorker.unregister();

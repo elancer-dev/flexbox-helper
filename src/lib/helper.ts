@@ -12,10 +12,6 @@ export const Helper = {
         return (typeof val === 'function');
     },
 
-    getParamValue: (paramTag: string, paramName: string) => {
-
-    }
-
 }
 
 export default Helper;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { TState, ActionFunction } from './../../utils/types';
+import { TState, ActionFunction, TStyles, TFlexContainer, TFlexItem } from './../../utils/types';
 import { action, actionsHandler } from './../../utils/actions';
 import Helper from '../../lib/helper';
 // import RunningLabel from './../running-label/running-label';
@@ -11,13 +11,14 @@ import Hint from '../hint/hint';
 
 type TProps = {
     hintMessage?: string;
-    paramTag: keyof TState;
+    paramTag: string;
     paramName: string;
     paramValue: string;
+    paramCurrentValue: string;
 }
 
 type TPS = TProps & {
-    paramOption: string;
+    // paramOption: string;
     action: ActionFunction;
 }
 
@@ -25,19 +26,31 @@ class ParamOption extends React.PureComponent<TPS> {
 
     // constructor(props: TPS) {
     //     super(props);
-    // }   
+    // }
 
-    render() {
+    componentDidMount = () => {
+        // console.log(this.props.paramOption);
+    }
+
+    clickHandler = () => {
+        this.props.action(actionsHandler, 'setStyle', { paramTag: this.props.paramTag, paramName: this.props.paramName, paramValue: this.props.paramValue });
+    }
+
+    render = () => {
+
+        var classList = 'flexbox-helper__param-option ' + ((this.props.paramValue === this.props.paramCurrentValue) ? 'flexbox-helper__param-option_current' : '');
+
+        var option = <div className={classList} onClick={this.clickHandler}>{this.props.paramValue}</div>
 
         if (this.props.hintMessage) {
             return (
                 <Hint message={this.props.hintMessage}>
-                    <div className="flexbox-helper__param-option flexbox-helper__param-option_current">{this.props.children}</div>
+                    {option}
                 </Hint>
             )
         } else {
             return (
-                <div className="flexbox-helper__param-option flexbox-helper__param-option_current">{this.props.children}</div>
+                { option }
             )
         }
 
@@ -46,7 +59,9 @@ class ParamOption extends React.PureComponent<TPS> {
 }
 
 const mapStateToProps = (state: TState, props: TProps) => {
-    return { paramOption: state[props.paramTag][props.paramName] };
+    return {
+        // paramOption: state.styles[props.paramTag][props.paramName]
+    };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch, props: TProps) => {
@@ -54,3 +69,4 @@ const mapDispatchToProps = (dispatch: Dispatch, props: TProps) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ParamOption);
+// export default connect(() => { }, mapDispatchToProps)(ParamOption);
