@@ -32,7 +32,7 @@ class Hint extends React.PureComponent<TProps, TState> {
         this.setState({ visible: false });
     }
 
-    getHint = (children: React.ReactNode) => {
+    getHintInner = (children: React.ReactNode) => {
         return (
             <Fragment>
                 {children}
@@ -44,7 +44,7 @@ class Hint extends React.PureComponent<TProps, TState> {
         )
     }
 
-    enrichRadioElements = (children: React.ReactNode): any => {
+    enrichElements = (children: React.ReactNode): any => {
 
         return React.Children.map(children, child => {
 
@@ -52,14 +52,14 @@ class Hint extends React.PureComponent<TProps, TState> {
                 return child;
             }
 
-            var inner = child.props.children ? child.props.children : '';
+            var childInner = child.props.children ? child.props.children : '';
 
             return React.Children.map(this.props.children, child => {
 
                 return React.cloneElement((child as React.ReactElement<EnrichedChildren>), {
                     onMouseEnter: this.mouseEnterHandler,
                     onMouseLeave: this.mouseLeaveHandler,
-                }, this.getHint(inner));
+                }, this.getHintInner(childInner));
 
             });
 
@@ -69,16 +69,10 @@ class Hint extends React.PureComponent<TProps, TState> {
 
     render = () => {
 
-        var childrenWithProps = this.enrichRadioElements(this.props.children);
-
-
-
         return (
-
             <Fragment>
-                {childrenWithProps}
+                {this.enrichElements(this.props.children)}
             </Fragment>
-
         )
 
     }

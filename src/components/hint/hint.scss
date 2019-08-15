@@ -1,5 +1,5 @@
 .flexbox-helper__hint {
-    // display: none;
+    display: none;
     position: absolute;
     margin-top: 20px;
     background-color: #000000;
@@ -9,6 +9,8 @@
     font-size: 1rem;
     font-weight: normal;
     min-width: 30px;
+    max-width: 500px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5), 0 4px 7px 0 rgba(13, 35, 67, 0.5);
 }
 
 .flexbox-helper__hint-arrow {

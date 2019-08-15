@@ -55,17 +55,21 @@ body {
     background-color: $param-option-background-color_current;
 }
 
-
+.flexbox-helper__params-note {
+    font-size: 0.7rem;
+}
 
 .flexbox-helper__container {
     display: flex;
     width: 1000px;
     border: 1px solid #bbbbbb;
-    margin: 0 auto;
+    // margin: 0 auto;
+    min-height: 150px;
 }
 
 .flexbox-helper__flex-item {
-    width: 100px;
-    height: 100px;
+    // width: 100px;
+    // height: 100px;
+    padding: 10px 70px 70px 10px;
     border: 1px solid #bbbbbb;
 }

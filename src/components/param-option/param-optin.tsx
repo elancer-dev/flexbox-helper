@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { TState, ActionFunction, TStyles, TFlexContainer, TFlexItem } from './../../utils/types';
@@ -10,8 +10,9 @@ import Helper from '../../lib/helper';
 import Hint from '../hint/hint';
 
 type TProps = {
+    default?: boolean;
     hintMessage?: string;
-    paramTag: string;
+    paramTag: keyof TStyles;
     paramName: string;
     paramValue: string;
     paramCurrentValue: string;
@@ -38,19 +39,19 @@ class ParamOption extends React.PureComponent<TPS> {
 
     render = () => {
 
-        var classList = 'flexbox-helper__param-option ' + ((this.props.paramValue === this.props.paramCurrentValue) ? 'flexbox-helper__param-option_current' : '');
+        var classList = 'flexbox-helper__param-option';
+        classList += this.props.paramValue === this.props.paramCurrentValue ? ' flexbox-helper__param-option_current' : '';
+        classList += this.props.default ? ' flexbox-helper__param-option_default' : '';
 
         var option = <div className={classList} onClick={this.clickHandler}>{this.props.paramValue}</div>
 
-        if (this.props.hintMessage) {
+        if (this.props.hintMessage && this.props.hintMessage.length) {
             return (
-                <Hint message={this.props.hintMessage}>
-                    {option}
-                </Hint>
+                <Hint message={this.props.hintMessage}>{option}</Hint>
             )
         } else {
             return (
-                { option }
+                <Fragment>{option}</Fragment>
             )
         }
 

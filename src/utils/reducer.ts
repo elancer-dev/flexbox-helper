@@ -6,9 +6,14 @@ const initialState: TState = {
             display: 'flex',
             flexDirection: 'row',
             flexWrap: 'nowrap',
+            justifyContent: 'flex-start',
+            alignItems: 'stretch',
         },
         flexItem: {
-            align: '',
+            // order: 0,
+            flexGrow: '0',
+            flexShrink: '1',
+            flexBasis: 'auto',
         },
     }
 }

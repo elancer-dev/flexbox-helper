@@ -3,10 +3,16 @@ export type TFlexContainer = {
     display: 'flex' | 'inline-flex';
     flexDirection: 'row' | 'row-reverse' | 'column' | 'column-reverse';
     flexWrap: 'nowrap' | 'wrap' | 'wrap-reverse';
+    justifyContent: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around';
+    alignItems: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
 };
 
 export type TFlexItem = {
-    align: string;
+    // alignSelf: string;
+    // order: string;
+    flexGrow: string;
+    flexShrink: string;
+    flexBasis: string;
 }
 
 export type TStyles = {
