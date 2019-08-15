@@ -1,0 +1,71 @@
+$param-name-color:#ce9178;
+
+$param-option-color:#d8d8d8;
+$param-option-border-color:#13385c;
+$param-option-background-color:#87929c;
+
+$param-option-color_current:#93ce9b;
+$param-option-border-color_current:#13385c;
+$param-option-background-color_current:#264f78;
+
+
+html,
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+.flexbox-helper__section-tag {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d7ba7d;
+    padding-bottom: 7px;
+}
+
+.flexbox-helper__params {
+    display: flex;
+    padding-bottom: 7px;
+    margin-left: 20px;
+}
+
+.flexbox-helper__param-name {
+    padding: 3px 7px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $param-name-color;
+    cursor: pointer;
+}
+
+.flexbox-helper__param-option {
+    margin: 0 7px;
+    padding: 3px 7px;
+    border: 1px solid $param-option-border-color;
+    border-radius: 5px;
+    color: $param-option-color;
+    background-color: $param-option-background-color;
+    cursor: pointer;
+}
+
+.flexbox-helper__param-option_default {
+    text-decoration: underline;
+}
+
+.flexbox-helper__param-option_current {
+    color: $param-option-color_current;
+    border: 1px solid $param-option-border-color;
+    background-color: $param-option-background-color_current;
+}
+
+
+
+.flexbox-helper__container {
+    display: flex;
+    width: 1000px;
+    border: 1px solid #bbbbbb;
+    margin: 0 auto;
+}
+
+.flexbox-helper__flex-item {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #bbbbbb;
+}
