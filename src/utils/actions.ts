@@ -1,5 +1,4 @@
 import { TState, TAction, TStyles } from './types';
-// import Helper from '../lib/helper';
 
 export const actionsHandler = {
 
@@ -22,6 +21,29 @@ export const actionsHandler = {
 
     },
 
+    addFlexItems: (state: TState, data: { count: number }): TState => {
+
+        var newState = { ...state };
+
+        newState.flexItemsCount += data.count;
+
+        if (newState.flexItemsCount < 0) {
+            newState.flexItemsCount = 0;
+        }
+
+        return newState;
+
+    },
+
+    switchFlexItemsVariousHeight: (state: TState, data: {}): TState => {
+
+        var newState = { ...state };
+
+        newState.flexItemsVariousHeight = !newState.flexItemsVariousHeight;
+
+        return newState;
+
+    },
 
 }
 

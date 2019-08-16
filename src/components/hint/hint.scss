@@ -4,13 +4,14 @@
     margin-top: 20px;
     background-color: #000000;
     color: #ffffff;
-    padding: 7px;
+    padding: 7px 20px 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
     font-weight: normal;
     min-width: 30px;
     max-width: 500px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5), 0 4px 7px 0 rgba(13, 35, 67, 0.5);
+    text-align: justify;
 }
 
 .flexbox-helper__hint-arrow {

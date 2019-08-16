@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer } from './utils/reducer';
-import ControlPanel from './components/control-panel/control-panel';
+import FlexboxHelper from './components/flexbox-helper/flexbox-helper';
 // import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
@@ -11,6 +11,6 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-ReactDOM.render(<Provider store={store}><ControlPanel /></Provider>, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}><FlexboxHelper /></Provider>, document.getElementById('app'));
 
 // serviceWorker.unregister();

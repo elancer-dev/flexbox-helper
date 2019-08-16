@@ -8,14 +8,16 @@ const initialState: TState = {
             flexWrap: 'nowrap',
             justifyContent: 'flex-start',
             alignItems: 'stretch',
+            alignContent: 'stretch',
         },
         flexItem: {
-            // order: 0,
             flexGrow: '0',
             flexShrink: '1',
             flexBasis: 'auto',
         },
-    }
+    },
+    flexItemsCount: 3,
+    flexItemsVariousHeight: false,
 }
 
 export function reducer(state: TState = initialState, action: TAction<any, any>): TState {

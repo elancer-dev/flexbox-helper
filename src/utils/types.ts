@@ -5,6 +5,7 @@ export type TFlexContainer = {
     flexWrap: 'nowrap' | 'wrap' | 'wrap-reverse';
     justifyContent: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around';
     alignItems: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+    alignContent: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'stretch';
 };
 
 export type TFlexItem = {
@@ -12,7 +13,7 @@ export type TFlexItem = {
     // order: string;
     flexGrow: string;
     flexShrink: string;
-    flexBasis: string;
+    flexBasis: 'auto' | 'content' | string;
 }
 
 export type TStyles = {
@@ -22,6 +23,8 @@ export type TStyles = {
 
 export type TState = {
     styles: TStyles;
+    flexItemsCount: number;
+    flexItemsVariousHeight: boolean;
 }
 
 export type TAction<H extends object, D> = {

@@ -1,0 +1,76 @@
+$param-name-color:#ce9178;
+
+$param-option-color:#d8d8d8;
+$param-option-border-color:#13385c;
+$param-option-background-color:#87929c;
+
+$param-option-color_current:#93ce9b;
+$param-option-border-color_current:#13385c;
+$param-option-background-color_current:#264f78;
+
+
+html,
+body {
+    font-family: 'Inconsolata', monospace;
+}
+
+.flexbox-helper__section-tag {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d7ba7d;
+    padding-bottom: 7px;
+}
+
+.flexbox-helper__params {
+    display: flex;
+    padding-bottom: 7px;
+    margin-left: 20px;
+}
+
+.flexbox-helper__param-name {
+    padding: 3px 7px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $param-name-color;
+    cursor: pointer;
+}
+
+.flexbox-helper__param-option {
+    margin: 0 7px;
+    padding: 3px 7px;
+    border: 1px solid $param-option-border-color;
+    border-radius: 5px;
+    color: $param-option-color;
+    background-color: $param-option-background-color;
+    cursor: pointer;
+}
+
+.flexbox-helper__param-option_default {
+    text-decoration: underline;
+}
+
+.flexbox-helper__param-option_current {
+    color: $param-option-color_current;
+    border: 1px solid $param-option-border-color;
+    background-color: $param-option-background-color_current;
+}
+
+.flexbox-helper__params-note {
+    font-size: 0.7rem;
+}
+
+.flexbox-helper__container-border {
+    width: 1000px;
+    background-image: url("data:image/svg+xml;charset=utf8,<svg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'><rect width='100%25' height='100%25' style='fill: none; stroke: rgb(204, 204, 204); stroke-width: 2; stroke-dasharray: 6 4; padding:10px'/></svg>");
+}
+
+.flexbox-helper__container {
+    display: flex;
+    border: 1px solid #9bc22f;
+    min-height: 150px;
+}
+
+.flexbox-helper__flex-item {
+    padding: 10px 70px 70px 10px;
+    border: 1px solid #e2a03d;
+}
