@@ -5,7 +5,7 @@ type TProps = {
     message: string;
 }
 
-type TState = {
+type TReactState = {
     visible: boolean
 }
 
@@ -15,7 +15,7 @@ type EnrichedChildren = {
     children?: React.ReactNode
 }
 
-class Hint extends React.PureComponent<TProps, TState> {
+class Hint extends React.PureComponent<TProps, TReactState> {
 
     constructor(props: TProps) {
         super(props);

@@ -12,6 +12,10 @@ export const Helper = {
         return (typeof val === 'function');
     },
 
+    isObject: <T>(val: Object | any): val is Object => {
+        return (typeof val === 'object');
+    },
+
 }
 
 export default Helper;

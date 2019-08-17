@@ -9,13 +9,17 @@ class ParamName extends React.PureComponent<TProps> {
 
     render = () => {
 
-        return (
+        var param = <div className="flexbox-helper__param-name">{this.props.children}</div>;
 
-            <Hint message={this.props.hintMessage}>
-                <div className="flexbox-helper__param-name">{this.props.children}</div>
-            </Hint>
-
-        )
+        if (this.props.hintMessage.length) {
+            return (
+                <Hint message={this.props.hintMessage}>
+                    {param}
+                </Hint>
+            )
+        } else {
+            return param;
+        }
 
     }
 

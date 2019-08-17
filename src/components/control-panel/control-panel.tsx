@@ -45,7 +45,7 @@ class ControlPanel extends React.PureComponent<TPS> {
                 <ControlPanelButton value="-10" onClick={() => this.addFlexItems(-10)} />
                 <ControlPanelButton value={"Различная высота элементов" + (this.props.flexItemsVariousHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexItemsVariousHeight()} />
                 <ControlPanelButton value={"Высота контейнера 1000px" + (this.props.flexContainerFixedHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexContainerFixedHeight()} />
-                <ControlPanelButton value="Отменить все" onClick={() => this.clearFlexItemsChanges()} />
+                <ControlPanelButton value="Отменить" onClick={() => this.clearFlexItemsChanges()} />
             </div>
         )
 

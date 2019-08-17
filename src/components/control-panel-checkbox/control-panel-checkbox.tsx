@@ -8,11 +8,11 @@ type TProps = {
     onClick?: (checked: boolean) => any;
 }
 
-type TState = {
+type TReactState = {
     checked: boolean
 }
 
-class ControlPanelCheckbox extends React.PureComponent<TProps, TState> {
+class ControlPanelCheckbox extends React.PureComponent<TProps, TReactState> {
 
     constructor(props: TProps) {
         super(props);
@@ -21,9 +21,16 @@ class ControlPanelCheckbox extends React.PureComponent<TProps, TState> {
         };
     }
 
+    componentDidUpdate() {
+        if (this.props.checked !== undefined) {
+            this.setState({ checked: this.props.checked });
+        }
+    }
+
     clickHandler = () => {
         var checked = !this.state.checked;
         this.setState({ checked });
+
         if (Helper.isSet(this.props.onClick)) {
             this.props.onClick(checked);
         }

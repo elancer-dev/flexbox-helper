@@ -97,6 +97,40 @@ class FlexboxHelper extends React.PureComponent<TPS> {
                 <div className="flexbox-helper__section-tag">{'}'}</div>
 
                 <div className="flexbox-helper__section-tag">{'.flex-item {'}</div>
+                <ParamOptions
+                    paramTag="flexItem" paramName="flexGrow" paramTitle="flex-grow:"
+                    paramHint=""
+                    paramValues={[
+                        { value: '0', hint: "" },
+                        { value: '1', hint: "" },
+                        { value: '2', hint: "" },
+                        { value: '3', hint: "" },
+                    ]}
+                    paramDefaultValue={0} paramCurrentValue={this.props.styles.flexItem.flexGrow}
+                />
+                <ParamOptions
+                    paramTag="flexItem" paramName="flexShrink" paramTitle="flex-shrink:"
+                    paramHint=""
+                    paramValues={[
+                        { value: '0', hint: "" },
+                        { value: '1', hint: "" },
+                        { value: '2', hint: "" },
+                        { value: '3', hint: "" },
+                    ]}
+                    paramDefaultValue={1} paramCurrentValue={this.props.styles.flexItem.flexShrink}
+                />
+                <ParamOptions
+                    paramTag="flexItem" paramName="flexBasis" paramTitle="flex-basis:"
+                    paramHint=""
+                    paramValues={[
+                        { value: 'auto', hint: "" },
+                        { value: 'content', hint: "" },
+                        { value: '200px', hint: "" },
+                        { value: '300px', hint: "" },
+                        { value: '400px', hint: "" },
+                    ]}
+                    paramDefaultValue={0} paramCurrentValue={this.props.styles.flexItem.flexBasis}
+                />
                 <div className="flexbox-helper__section-tag">{'}'}</div>
 
                 <div className="flexbox-helper__params-note">

@@ -15,6 +15,12 @@ export const actionsHandler = {
                 }
             );
 
+        } else if (data.paramTag === 'flexItem') {
+            newState.styles.flexItem = Object.assign({}, newState.styles.flexItem,
+                {
+                    [data.paramName]: data.paramValue
+                }
+            );
         }
 
         return newState;

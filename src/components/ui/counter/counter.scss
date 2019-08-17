@@ -1,0 +1,32 @@
+.ui-counter {
+    display: flex;
+    width: 205px;
+    justify-content: space-between;
+}
+
+.ui-counter__box {
+    display: flex;
+    // margin-left: 5px;
+}
+
+.ui-counter__dec-button,
+.ui-counter__inc-button {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    border: 2px solid #3f3f3f;
+    border-radius: 10px;
+    background-color: #779621;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ui-counter__count {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}

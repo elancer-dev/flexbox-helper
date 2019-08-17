@@ -68,10 +68,5 @@ body {
     display: flex;
     border: 3px solid #9bc22f;
     min-height: 150px;
-}
-
-.flexbox-helper__flex-item {
-    padding: 10px 70px 70px 10px;
-    border: 3px solid #e2a03d;
-    margin: 1px;
+    transition: all 300ms ease-out;
 }
