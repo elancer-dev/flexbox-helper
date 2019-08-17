@@ -18,6 +18,7 @@ const initialState: TState = {
     },
     flexItemsCount: 3,
     flexItemsVariousHeight: false,
+    flexContainerFixedHeight: false,
 }
 
 export function reducer(state: TState = initialState, action: TAction<any, any>): TState {

@@ -15,6 +15,7 @@ type TPS = TProps & {
     styles: TStyles;
     flexItemsCount: number;
     flexItemsVariousHeight: boolean;
+    flexContainerFixedHeight: boolean;
     // action: ActionFunction;
 }
 
@@ -99,14 +100,16 @@ class FlexboxHelper extends React.PureComponent<TPS> {
                 <div className="flexbox-helper__section-tag">{'}'}</div>
 
                 <div className="flexbox-helper__params-note">
-                    (underlined default value)
+                    <sup>*</sup>(подчеркнутое - значение по умолчанию)
                 </div>
 
                 <ControlPanel />
 
                 <div className="flexbox-helper__container-border">
                     <span>[span]</span>
-                    <div className="flexbox-helper__container" style={this.props.styles.flexContainer}>
+                    <div className="flexbox-helper__container" style={
+                        Object.assign({}, this.props.styles.flexContainer, this.props.flexContainerFixedHeight ? { height: '1000px' } : {})
+                    }>
                         <FlexItems count={this.props.flexItemsCount} variousHeight={this.props.flexItemsVariousHeight} />
                     </div>
                     <span>[span]</span>
@@ -124,6 +127,7 @@ const mapStateToProps = (state: TState) => {
         styles: state.styles,
         flexItemsCount: state.flexItemsCount,
         flexItemsVariousHeight: state.flexItemsVariousHeight,
+        flexContainerFixedHeight: state.flexContainerFixedHeight,
     };
 };
 

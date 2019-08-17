@@ -45,6 +45,28 @@ export const actionsHandler = {
 
     },
 
+    switchFlexContainerFixedHeight: (state: TState, data: {}): TState => {
+
+        var newState = { ...state };
+
+        newState.flexContainerFixedHeight = !newState.flexContainerFixedHeight;
+
+        return newState;
+
+    },
+
+    clearFlexItemsChanges: (state: TState, data: {}): TState => {
+
+        var newState = { ...state };
+
+        newState.flexItemsCount = 3;
+        newState.flexItemsVariousHeight = false;
+        newState.flexContainerFixedHeight = false;
+
+        return newState;
+
+    },
+
 }
 
 export const action = <H extends object, T extends keyof H, D>(h: H, t: T, d: D): TAction<H, D> => {

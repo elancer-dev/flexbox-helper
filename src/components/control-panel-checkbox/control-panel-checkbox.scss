@@ -1,0 +1,29 @@
+.control-panel-checkbox {
+    display: flex;
+}
+
+.control-panel-checkbox__checkbox-container {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #3f3f3f;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.control-panel-checkbox__checkbox-title {
+    // padding-top: 3px;
+    padding-left: 10px;
+}
+
+.control-panel-checkbox__checkbox-tick_checked {
+    width: 7px;
+    height: 12px;
+    border-bottom: 3px solid #779621;
+    border-right: 3px solid #779621;
+    transform: rotate(45deg) translate(-4px, -6px);
+
+}
+
+.control-panel-checkbox__checkbox-tick_unchecked {
+    display: none;
+}

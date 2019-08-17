@@ -25,6 +25,7 @@ export type TState = {
     styles: TStyles;
     flexItemsCount: number;
     flexItemsVariousHeight: boolean;
+    flexContainerFixedHeight: boolean;
 }
 
 export type TAction<H extends object, D> = {
