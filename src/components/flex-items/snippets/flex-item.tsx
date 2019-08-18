@@ -59,20 +59,29 @@ class FlexItem extends React.Component<TPS, TReactState> {
 
     counterChangeHandler = (c: string, param: 'order' | 'flexGrow' | 'flexShrink' | 'flexBasis') => {
 
-        var newState = {
-            useGeneralFlexItemStyles: false,
-            flexItem: {
-                alignSelf: this.state.flexItem.alignSelf,
-                order: this.state.flexItem.order,
-                flexGrow: this.state.flexItem.flexGrow,
-                flexShrink: this.state.flexItem.flexShrink,
-                flexBasis: this.state.flexItem.flexBasis,
-            }
-        };
+        // var newState = {
+        //     useGeneralFlexItemStyles: false,
+        //     flexItem: {
+        //         alignSelf: this.state.flexItem.alignSelf,
+        //         order: this.state.flexItem.order,
+        //         flexGrow: this.state.flexItem.flexGrow,
+        //         flexShrink: this.state.flexItem.flexShrink,
+        //         flexBasis: this.state.flexItem.flexBasis,
+        //     }
+        // };
 
-        newState.flexItem[param] = c;
+        // newState.flexItem[param] = c;
 
-        this.setState(newState);
+        // this.setState(newState);
+
+        this.setState({ useGeneralFlexItemStyles: false });
+
+        var f = this.state.flexItem;
+
+        var flexParams: { [key: string]: string } = {};
+        flexParams[param] = c;
+
+        this.setState({ flexItem: { order: '0' } });
 
     }
 
@@ -94,6 +103,12 @@ class FlexItem extends React.Component<TPS, TReactState> {
     flexBasisSelectChangeHandler = (item: string) => {
         console.log('final', item);
 
+        // if (item === '') {
+
+        //     this.setState({ useGeneralFlexItemStyles: false });
+
+        // } else {
+
         this.setState(
             {
                 useGeneralFlexItemStyles: false,
@@ -106,6 +121,7 @@ class FlexItem extends React.Component<TPS, TReactState> {
                 }
             }
         );
+        // }
     }
 
     render = () => {
@@ -125,7 +141,7 @@ class FlexItem extends React.Component<TPS, TReactState> {
                 <div><Counter title="flex-shrink:" min={-99} max={99} count={1} onChange={(c) => { this.counterChangeHandler(c.toString(), 'flexShrink') }} /></div>
                 <div>
                     <Select title="flex-basis:" list={[
-                        'auto', 'content', <Counter title="" min={0} step={100} count={0} postfix="px" onChange={(c) => { this.flexBasisSelectChangeHandler(c.toString() + 'px') }} />
+                        'auto', 'content', <Counter title="" min={0} step={100} count={500} postfix="px" onChange={(c) => { this.flexBasisSelectChangeHandler(c.toString() + 'px') }} />
                     ]} onChange={(item) => { this.flexBasisSelectChangeHandler(item) }} />
                 </div>
             </div>

@@ -9,8 +9,7 @@ type TProps = {
 }
 
 type TReactState = {
-    // currentItem: string;
-    currentItem: number | undefined;
+    currentItem: string;
     showList: boolean;
 }
 
@@ -19,8 +18,7 @@ class Select extends React.PureComponent<TProps, TReactState> {
     constructor(props: TProps) {
         super(props);
         this.state = {
-            // currentItem: this.props.list.length ? this.props.list[0] : '',
-            currentItem: this.props.list.length ? 0 : undefined,
+            currentItem: this.props.list.length ? this.props.list[0] : '',
             showList: false,
         }
     }
@@ -29,17 +27,17 @@ class Select extends React.PureComponent<TProps, TReactState> {
         this.setState({ showList: !this.state.showList });
     }
 
-    chooseItem = (item: any, i: number) => {
+    chooseItem = (item: any) => {
 
         this.setState({
-            currentItem: i,
+            currentItem: item,
             showList: false,
         });
 
         if (Helper.isSet(this.props.onChange)) {
 
             if (Helper.isObject(item)) {
-                this.props.onChange('0');
+                item.props.onChange(item.props.count);
             } else {
                 this.props.onChange(item);
             }
@@ -48,16 +46,25 @@ class Select extends React.PureComponent<TProps, TReactState> {
 
     }
 
+    parseTitle = (item: any, title: string): string => {
+
+        if (Helper.isSet(item.props.postfix)) {
+            return item.props.postfix.toString();
+        }
+
+        return title;
+    }
+
     render = () => {
 
         return (
             <div className="ui-select">
                 <div>{this.props.title}</div>
                 <div className="ui-select__box">
-                    <div className="ui-select__current-item">{Helper.isSet(this.state.currentItem) ? this.props.list[this.state.currentItem] : ''}</div>
+                    <div className="ui-select__current-item">{this.state.currentItem}</div>
                     <div className="ui-select__show-all" onClick={this.showList}><div></div></div>
                     <div className="ui-select__items-list" style={{ display: this.state.showList ? 'block' : 'none' }}>
-                        {this.props.list.map((item, i) => <div key={i} onClick={() => this.chooseItem(item, i)}>{item}</div>)}
+                        {this.props.list.map((item, i) => <div key={i} onClick={() => this.chooseItem(item)}>{Helper.isObject(item) ? this.parseTitle(item, 'px') : item}</div>)}
                     </div>
                 </div>
             </div>

@@ -16,13 +16,18 @@ type TReactState = {
     count: number;
 }
 
-class Counter extends React.PureComponent<TProps, TReactState> {
+class Counter extends React.Component<TProps, TReactState> {
 
     constructor(props: TProps) {
         super(props);
         this.state = {
             count: Helper.isSet(this.props.count) ? this.props.count : 0
         }
+    }
+
+    componentDidUpdate = () => {
+        console.log('update', this.props.title + this.props.postfix);
+
     }
 
     count = (c: number) => {
@@ -49,9 +54,9 @@ class Counter extends React.PureComponent<TProps, TReactState> {
             <div className="ui-counter">
                 <div>{this.props.title}</div>
                 <div className="ui-counter__box">
-                    <div className="ui-counter__dec-button" onClick={(e) => { this.count(-1 * (Helper.isSet(this.props.step) ? this.props.step : 1)); e.stopPropagation(); }}>-</div>
+                    <div className="ui-counter__dec-button" onClick={() => this.count(-1 * (Helper.isSet(this.props.step) ? this.props.step : 1))}>-</div>
                     <div className="ui-counter__count">{this.state.count}{Helper.isSet(this.props.postfix) ? this.props.postfix : ''}</div>
-                    <div className="ui-counter__inc-button" onClick={(e) => { this.count(1 * (Helper.isSet(this.props.step) ? this.props.step : 1)); e.stopPropagation(); }}>+</div>
+                    <div className="ui-counter__inc-button" onClick={() => this.count(1 * (Helper.isSet(this.props.step) ? this.props.step : 1))}>+</div>
                 </div>
             </div>
         )
