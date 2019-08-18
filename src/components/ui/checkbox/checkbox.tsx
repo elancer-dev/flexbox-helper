@@ -1,6 +1,6 @@
 import React from 'react';
-import Helper from '../../lib/helper';
-import './control-panel-checkbox.scss';
+import Helper from './../../../lib/helper';
+import './checkbox.scss';
 
 type TProps = {
     title: string;
@@ -9,10 +9,10 @@ type TProps = {
 }
 
 type TReactState = {
-    checked: boolean
+    checked: boolean;
 }
 
-class ControlPanelCheckbox extends React.PureComponent<TProps, TReactState> {
+class Checkbox extends React.PureComponent<TProps, TReactState> {
 
     constructor(props: TProps) {
         super(props);
@@ -51,4 +51,4 @@ class ControlPanelCheckbox extends React.PureComponent<TProps, TReactState> {
 
 }
 
-export default ControlPanelCheckbox;
+export default Checkbox;

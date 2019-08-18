@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
-import { TState, ActionFunction, TStyles } from './../../utils/types';
-import { action, actionsHandler } from './../../utils/actions';
-import Hint from '../hint/hint';
+import { ActionFunction, TStyles } from './../../../../utils/types';
+import { action, actionsHandler } from './../../../../utils/actions';
+import Hint from './../../../hint/hint';
 
 type TProps = {
     default?: boolean;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Hint from '../hint/hint';
+import Hint from './../../../hint/hint';
 
 type TProps = {
     hintMessage: string;

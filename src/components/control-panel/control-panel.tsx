@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { TState, ActionFunction } from './../../utils/types';
 import { action, actionsHandler } from './../../utils/actions';
-import ControlPanelButton from '../control-panel-button/control-panel-button';
+import Button from './../ui/button/button';
 
 import './control-panel.scss';
 
@@ -39,13 +39,13 @@ class ControlPanel extends React.PureComponent<TPS> {
 
         return (
             <div className="flexbox-helper__control-panel">
-                <ControlPanelButton value="+1" onClick={() => this.addFlexItems(1)} />
-                <ControlPanelButton value="-1" onClick={() => this.addFlexItems(-1)} />
-                <ControlPanelButton value="+10" onClick={() => this.addFlexItems(10)} />
-                <ControlPanelButton value="-10" onClick={() => this.addFlexItems(-10)} />
-                <ControlPanelButton value={"Различная высота элементов" + (this.props.flexItemsVariousHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexItemsVariousHeight()} />
-                <ControlPanelButton value={"Высота контейнера 1000px" + (this.props.flexContainerFixedHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexContainerFixedHeight()} />
-                <ControlPanelButton value="Отменить" onClick={() => this.clearFlexItemsChanges()} />
+                <Button value="+1" onClick={() => this.addFlexItems(1)} />
+                <Button value="-1" onClick={() => this.addFlexItems(-1)} />
+                <Button value="+10" onClick={() => this.addFlexItems(10)} />
+                <Button value="-10" onClick={() => this.addFlexItems(-10)} />
+                <Button value={"Различная высота элементов" + (this.props.flexItemsVariousHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexItemsVariousHeight()} />
+                <Button value={"Высота контейнера 1000px" + (this.props.flexContainerFixedHeight ? " (on)" : "(off)")} onClick={() => this.switchFlexContainerFixedHeight()} />
+                <Button value="Отменить" onClick={() => this.clearFlexItemsChanges()} />
             </div>
         )
 

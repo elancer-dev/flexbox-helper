@@ -1,7 +1,7 @@
 import React from 'react';
-import ParamName from '../param-name/param-name';
-import ParamOption from '../param-option/param-optin';
-import { TStyles } from '../../utils/types';
+import ParamName from './snippets/param-name/param-name';
+import ParamOption from './snippets/param-option/param-optin';
+import { TStyles } from './../../utils/types';
 
 type TProps = {
     paramTag: keyof TStyles;

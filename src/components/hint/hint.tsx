@@ -10,8 +10,8 @@ type TReactState = {
 }
 
 type EnrichedChildren = {
-    onMouseEnter: (e: MouseEvent) => void,
-    onMouseLeave: (e: MouseEvent) => void,
+    onMouseEnter: () => void,
+    onMouseLeave: () => void,
     children?: React.ReactNode
 }
 
@@ -22,13 +22,11 @@ class Hint extends React.PureComponent<TProps, TReactState> {
         this.state = { visible: false };
     }
 
-    mouseEnterHandler = (e: MouseEvent) => {
-        e.stopPropagation();
+    mouseEnterHandler = () => {
         this.setState({ visible: true });
     }
 
-    mouseLeaveHandler = (e: MouseEvent) => {
-        e.stopPropagation();
+    mouseLeaveHandler = () => {
         this.setState({ visible: false });
     }
 
@@ -67,15 +65,7 @@ class Hint extends React.PureComponent<TProps, TReactState> {
 
     }
 
-    render = () => {
-
-        return (
-            <Fragment>
-                {this.enrichElements(this.props.children)}
-            </Fragment>
-        )
-
-    }
+    render = () => this.enrichElements(this.props.children)
 
 }
 

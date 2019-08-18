@@ -12,9 +12,11 @@
 .ui-select__items-list {
     position: absolute;
     top: 20px;
+    right: 0;
     background-color: #ffffff;
     border: 1px solid #3f3f3f;
     display: none;
+    z-index: 1;
 }
 
 .ui-select__items-list div {
@@ -30,7 +32,6 @@
 }
 
 .ui-select__current-item {
-    // width: 83px;
     width: 90px;
     text-align: right;
     font-weight: bold;
