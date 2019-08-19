@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/flexbox-helper/static/css/main.e18ff611.chunk.css",
+    "main.js": "/flexbox-helper/static/js/main.6f801c79.chunk.js",
+    "runtime~main.js": "/flexbox-helper/static/js/runtime~main.3b987747.js",
+    "static/js/2.f62ce9ad.chunk.js": "/flexbox-helper/static/js/2.f62ce9ad.chunk.js",
+    "index.html": "/flexbox-helper/index.html",
+    "precache-manifest.f4bac503babae7e61851e713d9262e52.js": "/flexbox-helper/precache-manifest.f4bac503babae7e61851e713d9262e52.js",
+    "service-worker.js": "/flexbox-helper/service-worker.js"
+  }
+}

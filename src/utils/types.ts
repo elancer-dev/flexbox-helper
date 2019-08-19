@@ -9,8 +9,6 @@ export type TFlexContainer = {
 };
 
 export type TFlexItem = {
-    // alignSelf: string;
-    // order: string;
     flexGrow: string;
     flexShrink: string;
     flexBasis: 'auto' | 'content' | string;

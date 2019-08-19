@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators, Dispatch } from 'redux';
 import { TState, TStyles } from './../../utils/types';
-// import { action, actionsHandler } from './../../utils/actions';
 import ParamOptions from '../param-options/param-options';
 import ControlPanel from '../control-panel/control-panel';
 import FlexItems from '../flex-items/flex-items';
@@ -16,7 +14,6 @@ type TPS = TProps & {
     flexItemsCount: number;
     flexItemsVariousHeight: boolean;
     flexContainerFixedHeight: boolean;
-    // action: ActionFunction;
 }
 
 class FlexboxHelper extends React.PureComponent<TPS> {
@@ -167,7 +164,6 @@ const mapStateToProps = (state: TState) => {
 
 const mapDispatchToProps = () => {
     return {};
-    // return bindActionCreators({ action: action }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FlexboxHelper);
